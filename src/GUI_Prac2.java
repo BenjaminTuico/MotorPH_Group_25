@@ -74,6 +74,7 @@ public class GUI_Prac2 implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
+		//Code for the login menu
 		String user = userText.getText();
 		String password = passText.getText();
 		System.out.println(user +", " + password);

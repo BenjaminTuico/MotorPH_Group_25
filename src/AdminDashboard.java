@@ -45,41 +45,41 @@ public class AdminDashboard implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) { 
 		
-		// 1. TINANGGAL ang semicolon sa dulo, BINUKSAN ang kulot na bracket '{'
+		//Code for reading EmployeeData.csv
 		if (e.getSource() == searchButton) {
 			
 			String inputID = searchText.getText().trim();
 			
-			// 2. PINALITAN ang pangalan para hindi duplicate, at nilagyan ng buong path mo
+			
 			String csvFile = "EmployeeData.csv";
 			String line = "";
 			boolean ifFound = false;
 			
 			try (BufferedReader br = new BufferedReader (new FileReader(csvFile))){
 				
-				// Skipin muna natin ang header row ng CSV para hindi magka-error sa split
+				
 				br.readLine();
 				
-				// 3. GINAWANG single '=' lang ang loob para ma-save ang text sa 'line'
+				
 				while ((line = br.readLine()) != null) {
 					
 					String[] data = line.split(",");
 					
-					// 2b. PINALITAN ang pangalan para maging 'csvID' imbes na 'employeeData'
-					String csvID = data[0].replaceAll("\"", "").trim();
 					
+					String csvID = data[0].replaceAll("\"", "").trim();
+					//On the csv/worksheet always starts from 0
 					if(csvID.equals(inputID)) {
 						String employeeID = data[0].replaceAll("\"", "").trim();
 						String firstName = data[1].replaceAll("\"", "").trim();
 						String lastName = data[2].replaceAll("\"", "").trim();
 						String birthDay = data[3].replaceAll("\"", "").trim();
 						
-						JOptionPane.showMessageDialog(frame, "Employee Found: " + "ID: " + employeeID + " | " + firstName + " | " + lastName + " | " + "Birthday: " + birthDay);
+						JOptionPane.showMessageDialog(frame, "Employee Found: " + "ID: " + employeeID + " | " + firstName + " " + lastName + " | " + "Birthday: " + birthDay);
 						ifFound = true;
 						break;
 					}
 				}
-			
+			//Code for employee does not exist
 				if (ifFound == false) {
 					JOptionPane.showMessageDialog(frame, "Employee ID " + inputID + " does not exist.");
 				}
@@ -88,8 +88,8 @@ public class AdminDashboard implements ActionListener {
 				JOptionPane.showMessageDialog(frame, "Error reading employeeData: " + ex.getMessage());
 			}
 			
-		} // Pangsara ng 'if (e.getSource() == searchButton)'
-		
+		}
+		//Code for logout button
 		if (e.getSource() == logoutButton) {
 			GUI_Prac2.main(null);
 			frame.dispose();
@@ -97,5 +97,5 @@ public class AdminDashboard implements ActionListener {
 			
 		}
 		
-	} // Pangsara ng buong 'actionPerformed' method
+	} 
 }

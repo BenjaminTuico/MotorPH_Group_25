@@ -85,6 +85,8 @@ public class GUI_Prac2 implements ActionListener {
 		button = new JButton("Login");
 		button.setBounds(35, 290, 270, 40);
 		button.setFont(new Font("Arial", Font.BOLD, 14)); 
+		button.setOpaque(true);
+        button.setBorderPainted(false);
 		button.setBackground(new Color(30, 30, 30)); // Dark modern style
 		button.setForeground(Color.WHITE);
 		button.addActionListener(new GUI_Prac2());

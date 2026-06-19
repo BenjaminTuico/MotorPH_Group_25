@@ -86,6 +86,8 @@ public class EmployeeDashboard implements ActionListener {
 		logoutButton = new JButton("Logout");
 		logoutButton.setBounds(35, 340, 270, 40);
 		logoutButton.setFont(new Font("Arial", Font.BOLD, 14));
+		logoutButton.setOpaque(true);
+        logoutButton.setBorderPainted(false);
 		logoutButton.setBackground(new Color(200, 50,50));
 		logoutButton.setForeground(Color.WHITE);
 		logoutButton.addActionListener(this);

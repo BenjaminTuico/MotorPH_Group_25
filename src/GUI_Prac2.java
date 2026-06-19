@@ -30,6 +30,7 @@ public class GUI_Prac2 implements ActionListener {
 		frame = new JFrame("MotorPH");
 		frame.setSize(450, 550);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setResizable(false);
 		
 		// 2. Create the background panel
 		mainPanel = new JPanel();
@@ -37,7 +38,7 @@ public class GUI_Prac2 implements ActionListener {
 		frame.add(mainPanel);
 		
 		// 3. Load and set the background image 
-		ImageIcon bgIcon = new ImageIcon(GUI_Prac2.class.getResource("/motorph_bg3.jfif"));
+		ImageIcon bgIcon = new ImageIcon(GUI_Prac2.class.getResource("/black-bg.jfif"));
 		JLabel background = new JLabel(bgIcon);
 		background.setBounds(0, 0, 450, 550); 
 		
